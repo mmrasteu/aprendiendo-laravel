@@ -14,5 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "<h1>Hola mundo</h1>";
+    
+});
+
+/*
+ * PRINCIPALES METODOS HTTP
+ * 
+ * GET: Conseguir datos
+ * POST: Guardar datos
+ * PUT: Actualizar datos
+ * DELETE: Borrar datos
+ * 
+ */
+/*
+Route::get('/mostrar-fecha', function(){
+    echo "<h1>Fecha actual</h1>";
+    echo date('d-m-Y');
+    echo "<br/>";
+    echo "<a href='/'>Inicio</a>";
+});
+*/
+
+Route::get('/mostrar-fecha', function(){
+    $titulo = "Estoy mostrando la fecha ";
+    return view('mostrar-fecha', array(
+        'titulo' => $titulo
+    ));
 });
