@@ -53,3 +53,13 @@ Route::get('/pelicula/{titulo}/{year?}', function($titulo = "Empty", $year = 201
     'titulo' => '[a-zA-z]+',
     'year' => '[0-9]+'
 ));
+
+Route::get('/listado-peliculas', function(){
+    
+    $titulo = "Listado de peliculas";
+    $listado = array('Batman', 'Superman', 'Gran Torino');
+    
+    return view('peliculas.listado')
+            ->with('titulo', $titulo)
+            ->with('listado', $listado);
+});
