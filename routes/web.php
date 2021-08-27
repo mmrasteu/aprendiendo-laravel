@@ -39,6 +39,17 @@ Route::get('/mostrar-fecha', function(){
 Route::get('/mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha ";
     return view('mostrar-fecha', array(
-        'titulo' => $titulo
+        'titulo' => $titulo,
+        'year' => $year
     ));
 });
+
+Route::get('/pelicula/{titulo}/{year?}', function($titulo = "Empty", $year = 2019){
+    return view('pelicula', array(
+        'titulo' => $titulo,
+        'year' => $year
+    ));
+})->where(array(
+    'titulo' => '[a-zA-z]+',
+    'year' => '[0-9]+'
+));
