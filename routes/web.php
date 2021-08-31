@@ -18,6 +18,9 @@ Route::get('/', function () {
     
 });
 
+use App\Http\Controllers\PeliculaController;
+Route::get('/peliculas/{pagina?}', [PeliculaController::class, 'index']);
+
 /*
  * PRINCIPALES METODOS HTTP
  * 
@@ -36,6 +39,7 @@ Route::get('/mostrar-fecha', function(){
 });
 */
 
+/*
 Route::get('/mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha ";
     return view('mostrar-fecha', array(
@@ -43,6 +47,7 @@ Route::get('/mostrar-fecha', function(){
         'year' => $year
     ));
 });
+
 
 Route::get('/pelicula/{titulo}/{year?}', function($titulo = "Empty", $year = 2019){
     return view('pelicula', array(
@@ -63,3 +68,11 @@ Route::get('/listado-peliculas', function(){
             ->with('titulo', $titulo)
             ->with('listado', $listado);
 });
+
+
+Route::get('pagina-generica', function(){
+    
+    return view('pagina');
+});
+ * 
+ */
