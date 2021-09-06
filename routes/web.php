@@ -19,7 +19,24 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\PeliculaController;
-Route::get('/peliculas/{pagina?}', [PeliculaController::class, 'index']);
+Route::get('/peliculas/{pagina?}', [PeliculaController::class, 'index'])
+        ->name('pelicula.index');
+
+Route::get('/detalle/{year?}', [PeliculaController::class, 'detalle'])
+        ->name('pelicula.detalle')
+        ->middleware('testyear');
+
+Route::get('/redirigir', [PeliculaController::class, 'redirigir'])
+        ->name('pelicula.redirigir');
+
+Route::get('/formulario', [PeliculaController::class, 'formulario'])
+        ->name('pelicula.formulario');
+
+Route::post('/recibir', [PeliculaController::class, 'recibir'])
+        ->name('pelicula.recibir');
+
+use App\Http\Controllers\UsuarioController;
+Route::resource('usuario', UsuarioController::class);
 
 /*
  * PRINCIPALES METODOS HTTP

@@ -5,3 +5,6 @@
 <h3> La pagina es {{$pagina}}</h3>
 @endif
  
+<a href="{{route('pelicula.detalle', ['id' => 12])}}"> 
+    Ir al detalle 12
+</a>

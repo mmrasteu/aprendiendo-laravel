@@ -14,5 +14,24 @@ class PeliculaController extends Controller
             'pagina' => $pagina
         ]);
     }
+    
+    public function detalle($year = null) {
+        return view('pelicula.detalle');
+    }
+    
+    public function redirigir(){
+        return redirect()->action('App\Http\Controllers\PeliculaController@detalle');
+    }
+    
+    public function formulario(){
+        return view('pelicula.formulario');
+    }
+    
+    public function recibir(Request $request){
+        $nombre = $request->input('nombre');
+        $correo = $request->input('email');
+        
+        return "El nombre es: $nombre y el email es: $correo";
+    }
 }
 
