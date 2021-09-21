@@ -11,4 +11,6 @@
 
 <br/>
 
-<a href=""> Actualizar </a>
+<a href="{{ action('App\Http\Controllers\FrutaController@edit', ['id' => $fruta->id]) }}"> 
+    Actualizar 
+</a>
