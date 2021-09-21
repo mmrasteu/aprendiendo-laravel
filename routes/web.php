@@ -45,6 +45,10 @@ Route::group(['prefix'=>'fruta'], function(){
             ->name('fruta.index');
     Route::get('detail/{id}', [FrutaController::class, 'detail'])
             ->name('fruta.detail');
+    Route::get('create', [FrutaController::class, 'create'])
+            ->name('fruta.create');
+    Route::post('save', [FrutaController::class, 'save'])
+            ->name('fruta.save');
 });
 
 /*
