@@ -14,5 +14,13 @@ class FrutaController extends Controller
             'frutas' => $frutas
         ]);
     }
+    
+    public function detail($id){
+        $fruta = DB::table('frutas')->where('id', '=', $id)->first();
+        
+        return view('fruta.detail', [
+            'fruta' => $fruta
+        ]);
+    }
 }
 

@@ -43,6 +43,8 @@ use App\Http\Controllers\FrutaController;
 Route::group(['prefix'=>'fruta'], function(){ 
     Route::get('index', [FrutaController::class, 'index'])
             ->name('fruta.index');
+    Route::get('detail/{id}', [FrutaController::class, 'detail'])
+            ->name('fruta.detail');
 });
 
 /*
