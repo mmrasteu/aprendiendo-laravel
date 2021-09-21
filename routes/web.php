@@ -38,6 +38,13 @@ Route::post('/recibir', [PeliculaController::class, 'recibir'])
 use App\Http\Controllers\UsuarioController;
 Route::resource('usuario', UsuarioController::class);
 
+//Rutas frutas
+use App\Http\Controllers\FrutaController;
+Route::group(['prefix'=>'fruta'], function(){ 
+    Route::get('index', [FrutaController::class, 'index'])
+            ->name('fruta.index');
+});
+
 /*
  * PRINCIPALES METODOS HTTP
  * 
